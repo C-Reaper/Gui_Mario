@@ -1,67 +1,40 @@
-# Mario Bros. Clone (C Project)
+# Project README
 
 ## Overview
-This project is a 2D side-scrolling platformer game implemented in C, inspired by classic games like Super Mario Bros. The game features basic gameplay mechanics, such as moving left and right, jumping, collecting items, and avoiding obstacles.
+This project is a simple 2D platformer game written in C. The player can move left and right, jump, and collide with various blocks in the environment.
 
 ## Features
-- Basic movement controls (left/right, jump)
-- Collectible items (coin)
-- Obstacles (bricks, pitfalls)
-- Simple level design
+- Player movement (left, right)
+- Jumping mechanics
+- Collision detection with solid blocks
+- Basic rendering of player sprite
 
 ## Project Structure
 ```
-mario_bros_clone/
-├── Makefile
-├── include/
-│   ├── sprite.h
-│   ├── rect.h
-│   ├── figure.h
-│   ├── world.h
-│   └── ...
-├── src/
-│   ├── main.c
-│   ├── sprite.c
-│   ├── rect.c
-│   ├── figure.c
-│   ├── world.c
-│   └── ...
-└── assets/
-    ├── images/
-    │   ├── player.png
-    │   ├── ground.png
-    │   ├── brick.png
-    │   ├── coin.png
-    │   └── ...
-    └── sounds/
-        ├── jump.wav
-        ├── collect_coin.wav
-        └── ...
+<Project>/
+├── assets/             # Contains images and sound files
+│   ├── player.png      # Player sprite image
+│   └── background.png  # Background image
+├── src/                # Source code
+│   ├── Main.c          # Entry point of the program
+│   ├── Figure.h        # Header file for player functionality
+│   ├── Figure.c        # Implementation of player functionality
+│   └── World.h         # Placeholder header file for world map handling (not implemented)
+├── README.md           # This file
+└── Makefile.linux      # Linux Build configuration
 ```
-
-## Build & Run
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
-- SDL2 library for rendering and input handling (optional)
 
-### Build Steps
+## Build & Run
+To build the project on Linux, follow these steps:
+1. Navigate to the project directory.
+2. Run `make -f Makefile.linux all` to build the project.
 
-```bash
-cd mario_bros_clone
-make clean  # Optional, if you want to remove previous build files
-make all    # Compile the project
+To run the compiled executable:
+1. Run `make -f Makefile.linux exe`.
 
-If SDL2 is used:
-
-make lib    # Compile the library
-./build/Main  # Run the game
-
-or
-
-make exe   # Directly compile and run the executable
-```
-
-This Makefile should be adjusted based on your development environment and available libraries. If SDL2 is not used, some parts of the code related to rendering might need adjustments or removals.
+This will produce an executable file named `./build/Main(.exe)` in the root directory of the project, which can be run directly.
