@@ -22,7 +22,7 @@ int Rect_Rect_Compare(const void* e1,const void* e2) {
 }
 
 void Setup(AlxWindow* w){
-	AlxFont_Resize(&window.AlxFont,16,16);
+	AlxFont_Resize(&window.font,16,16);
 	
 	tv = TransformedView_New((Vec2){ GetHeight(),GetHeight() });
 	TransformedView_Zoom(&tv,(Vec2){ 0.1f,0.1f });
@@ -166,12 +166,12 @@ void Update(AlxWindow* w){
 	// 	Sprite* s = (Sprite*)Vector_Get(a,0);
 
 	// 	String str = String_Format("S:%d,%d",s->w,s->h);
-	// 	CStr_RenderSizeAlxFont(WINDOW_STD_ARGS,&window.AlxFont,str.Memory,str.size,0.0f,i * window.AlxFont.CharSizeY,WHITE);
+	// 	CStr_RenderSizeAlxFont(WINDOW_STD_ARGS,&window.font,str.Memory,str.size,0.0f,i * window.font.CharSizeY,WHITE);
 	// 	String_Free(&str);
 	// }
 
 	String str = String_Format("S:%d,%d",window.Width,window.Height);
-	CStr_RenderSizeAlxFont(WINDOW_STD_ARGS,&window.AlxFont,str.Memory,str.size,0.0f,0.0f,WHITE);
+	CStr_RenderSizeAlxFont(WINDOW_STD_ARGS,&window.font,str.Memory,str.size,0.0f,0.0f,WHITE);
 	String_Free(&str);
 }
 void Delete(AlxWindow* w){
